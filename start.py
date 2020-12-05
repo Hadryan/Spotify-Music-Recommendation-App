@@ -1,12 +1,15 @@
 import requests
 import json
+import os
 from pprint import pprint
+from dotenv import load_dotenv
+load_dotenv()
 
-clientId = ''
-clientSecret = ''
-redirectUri = ''
+clientId = os.getenv("clientId")
+clientSecret = os.getenv("clientSecret")
+redirectUri = os.getenv("redirectUri")
 
-accessToken = ''
+accessToken = os.getenv("accessToken")
 baseUrl = 'https://api.spotify.com/v1/'
 headers = {'Authorization': 'Bearer {token}'.format(token=accessToken)}
 
